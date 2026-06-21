@@ -7,7 +7,7 @@ data (NFHS-4, NFHS-5 and NFHS-6) across 640 districts and 37 states/UTs and 131
 indicators. Built with [Vite](https://vitejs.dev/) and [D3](https://d3js.org/),
 with PowerPoint and Excel export of any view.
 
-## What's inside
+## Repository structure
 
 ```
 .
@@ -38,41 +38,6 @@ npm run build    # production build into dist/
 npm run preview  # preview the production build locally
 ```
 
-## Deploy to GitHub Pages (automatic)
-
-This repo ships with a GitHub Actions workflow that builds the site and publishes
-it to GitHub Pages on every push to `main`.
-
-1. Create a new repository on GitHub and push this project:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "NFHS Atlas dashboard"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo>.git
-   git push -u origin main
-   ```
-
-2. In the repository on GitHub, open **Settings → Pages** and set
-   **Source** to **GitHub Actions**.
-
-3. The `Deploy to GitHub Pages` workflow runs automatically. When it finishes,
-   your dashboard is live at `https://<your-username>.github.io/<your-repo>/`.
-   (You can also trigger it manually from the **Actions** tab.)
-
-`vite.config.js` uses `base: './'`, so the build works under any repository path
-without hard-coding the repo name. If you instead serve from a custom domain or
-the repo root, the relative base still works.
-
-## Updating the data
-
-Replace the files in `public/data/` (keeping the same filenames and shapes) and
-push — the workflow rebuilds and redeploys automatically. `nfhs_data.json` holds
-`indicators`, `categories`, `districts`, `states`, `national` and `meta`;
-`districts.json` / `states.json` are GeoJSON `FeatureCollection`s whose feature
-properties carry the keys the app joins on (`k`/`s` for districts, `s` for states).
-
 ## Notes on the data
 
 NFHS-4/5 state and national figures are unweighted means of district values;
@@ -83,5 +48,4 @@ labelled accordingly. Ladakh shares 2011-census geometry with Jammu & Kashmir.
 
 ## License
 
-Data © IIPS / MoHFW, Government of India (NFHS). Dashboard code: add your own
-license here.
+Data © NFHS Factsheets, published by IIPS.
